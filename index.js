@@ -1,5 +1,17 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const PORT = 8080;
+
+app.use(express.json());
+
+app.post('/', (req, res) => {
+    
+    const { challenge } = req.body;
+
+    res.status(200).send({
+        "challenge": challenge
+    })
+});
 
 app.listen(
     PORT,
