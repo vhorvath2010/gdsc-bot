@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "@slack/bolt": "^3.10.0",
+    "dotenv": "^16.0.0"
   }
 }
