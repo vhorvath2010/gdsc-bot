@@ -1,26 +1,27 @@
+const express = require('express');
 const path = require('path');
-const { App } = require('@slack/bolt');
-require('dotenv').config();
 
-// Setup Slack app
+// Setup express router
+const app = express();
 const PORT = process.env.PORT || 8080;
-const app = new App({
-    signingSecret: process.env.SLACK_SIGNING_SECRET,
-    token: process.env.SLACK_BOT_TOKEN,
-    socketMode: true,
-    appToken: process.env.SLACK_APP_TOKEN
-})
+app.use(express.json());
 
-// Listens to incoming messages that contain "hello"a
-app.message('hello', async ({ message, say }) => {
-    // say() sends a message to the channel where the event was triggered
-    await say(`Hey there <@${message.user}>!`);
+// Basic homepage info
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/index.html'))
 });
 
-// Start Slack
-(async () => {
-    // Start the app
-    await app.start(PORT);
+// Handle post requests
+app.post('/', (req, res) => {
+    // Get Event payload
+    let payload = req.body;
+    // Respond with HTTP 200
+    console.log(payload);
+    res.sendStatus(200);
+});
 
-    console.log('⚡️ Bolt app is running!');
-})();
+// Startup express
+app.listen(
+    PORT,
+    () => console.log("application running on http://localhost:" + PORT)
+);
