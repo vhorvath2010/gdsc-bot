@@ -26,15 +26,16 @@ app.post('/', (req, res) => {
         const msg = payload.event.text;
         // Attempt to send hi reponse
         try {
+            const userMention = "<@" + payload.event.user + ">";
             if (msg.toLowerCase().includes("hi") || msg.toLowerCase().includes("hello")) {
                 const result = slack.chat.postMessage({
                     channel: payload.event.channel,
-                    text: "Hello, @" + payload.event.user + "!"
+                    text: "Hello, " + userMention + "! I'm GDSC Bot, a helpful friend for all your GDSC questions!"
                 });
             } else {
                 const result = slack.chat.postMessage({
                     channel: payload.event.channel,
-                    text: "Sorry, @" + payload.event.user + ". I don't understand! Try asking a GDSC lead"
+                    text: "Sorry, " + userMention + ". I don't understand! Try asking a GDSC lead..."
                 });
             }
         } catch (error) {
