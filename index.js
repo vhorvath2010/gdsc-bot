@@ -43,7 +43,7 @@ app.post('/', (req, res) => {
             // Post message
             slack.chat.postMessage({
                 channel: payload.event.channel,
-                text: msg
+                text: reply
             });
         } catch (error) {
             console.error(error);
