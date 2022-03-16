@@ -33,7 +33,7 @@ app.post('/', (req, res) => {
             reply = "Sorry, " + userMention + ". I don't understand! Try asking a GDSC lead...";
             // Attempt to acquire reply 
             for (key in replies) {
-                if (msg.toLowerCase().contains(key)) {
+                if (msg.toLowerCase().includes(key)) {
                     reply = replies[key];
                     break;
                 }
