@@ -54,5 +54,5 @@ app.post('/', (req, res) => {
 // Startup express
 app.listen(
     PORT,
-    () => console.log("application running on http://localhost:" + PORT)
+    () => console.log("application running on port:" + PORT)
 );
