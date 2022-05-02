@@ -4,6 +4,7 @@
     "hey": "Hello, %mention%! I'm GDSC Bot, a helpful friend for all your GDSC questions!",
     "thanks": "You're welcome %mention%!",
     "thank you": "You're welcome %mention%!",
-    "next meeting": "Our next event is the IEEE + GDSC Hackathon on 04/02/2022. Hope to see you there %mention%!",
-    "upcoming meeting": "Our next event is the IEEE + GDSC Hackathon on 04/02/2022. Hope to see you there %mention%!"
+    "next meeting": "GDSC has no more events planned this semester! Good luck on finals and have a great summer %mention%!",
+    "upcoming meeting": "GDSC has no more events planned this semester! Good luck on finals and have a great summer %mention%!",
+    "meeting": "GDSC has no more events planned this semester! Good luck on finals and have a great summer %mention%!",
 }
